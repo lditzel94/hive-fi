@@ -1,15 +1,17 @@
 package org.example.app.adapter.controller
 
 import kotlinx.coroutines.coroutineScope
+import org.example.app.adapter.database.Entity
+import org.example.app.adapter.database.R2dbcExampleRepository
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import org.springframework.web.reactive.function.client.WebClient
 
 @RestController
 @RequestMapping("/coroutine")
 class RestControllerAdapter(
-    private val client: WebClient,
+    private val repository: R2dbcExampleRepository,
 ) {
 
     @GetMapping
@@ -18,6 +20,9 @@ class RestControllerAdapter(
             helloWorld = "from app"
         )
     }
+
+    @PostMapping
+    suspend fun insertAny() = repository.save(Entity(firstName = "John Doe"))
 }
 
 data class Greeting(

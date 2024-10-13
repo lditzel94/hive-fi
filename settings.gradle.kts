@@ -13,3 +13,4 @@ plugins {
 rootProject.name = "hive-fi"
 include("app")
 include("reactive-web")
+include("relational-database")

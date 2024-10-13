@@ -7,15 +7,17 @@ version = "1.0.0"
 
 plugins {
     id("spring-common-conventions")
+    // Adds reactive web config
     id("web.spring-reactive-web-conventions")
+    // Adds reactive database config
+    id("database.spring-r2dbc-conventions")
 }
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
+    // Adds reactive web config
     implementation(project(":reactive-web"))
-}
 
-application {
-    // Define the main class for the application.
-    mainClass = "org.example.app.AppKt"
+    // Adds reactive database config
+    implementation(project(":relational-database"))
 }
