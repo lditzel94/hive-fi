@@ -7,9 +7,9 @@ version = "1.0.0"
 
 plugins {
     id("spring-common-conventions")
-    // Adds reactive web config
+    // Adds reactive web dependencies
     id("web.spring-reactive-web-conventions")
-    // Adds reactive database config
+    // Adds reactive database dependencies
     id("database.spring-r2dbc-conventions")
 }
 
