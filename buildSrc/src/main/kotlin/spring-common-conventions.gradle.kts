@@ -1,13 +1,3 @@
-import gradle.kotlin.dsl.accessors._aa5badd02c7a3574dc4f111cb3fd22f9.dependencyManagement
-import gradle.kotlin.dsl.accessors._aa5badd02c7a3574dc4f111cb3fd22f9.implementation
-import gradle.kotlin.dsl.accessors._aa5badd02c7a3574dc4f111cb3fd22f9.java
-import gradle.kotlin.dsl.accessors._aa5badd02c7a3574dc4f111cb3fd22f9.kotlin
-import gradle.kotlin.dsl.accessors._aa5badd02c7a3574dc4f111cb3fd22f9.testImplementation
-import gradle.kotlin.dsl.accessors._aa5badd02c7a3574dc4f111cb3fd22f9.testRuntimeOnly
-import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.kotlin
-import org.gradle.kotlin.dsl.repositories
-import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21
 import org.springframework.boot.gradle.tasks.run.BootRun
 
