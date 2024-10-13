@@ -14,6 +14,12 @@ class RestControllerAdapter(
 
     @GetMapping
     suspend fun hello() = coroutineScope {
-        mapOf("helloWorld" to "from app")
+        Greeting(
+            helloWorld = "from app"
+        )
     }
 }
+
+data class Greeting(
+    val helloWorld: String
+)

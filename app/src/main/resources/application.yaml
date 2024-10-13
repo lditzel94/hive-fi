@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: hive-fi
+  profiles:
+    active: ${ACTIVE_PROFILE:local}
+
+logging:
+  pattern:
+    console: "%boldGreen(%d{yy-MM-dd}) %boldGreen(%d{HH:mm:ss.SSS}) | %boldMagenta(%-15.15mdc{traceId} %-15.15mdc{spanId} %-15.15mdc{thread}) | %highlight(%-5.5level) | %-15.15logger{15} | %boldCyan(%-10.10mdc{folder}) | %m%n"
+
+server:
+  port: ${SERVER_PORT:8080}
