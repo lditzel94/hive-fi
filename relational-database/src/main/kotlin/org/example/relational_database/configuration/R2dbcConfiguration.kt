@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement
 @Configuration
 @EnableR2dbcRepositories("org.example")
 @EnableTransactionManagement
-open class R2dbcConfiguration {
+class R2dbcConfiguration {
     private val POSTGRES_HOST = System.getenv("POSTGRES_HOST") ?: "localhost"
     private val POSTGRES_PORT = System.getenv("POSTGRES_PORT")?.toInt() ?: 5432
     private val POSTGRES_DB: String = System.getenv("POSTGRES_DB") ?: "postgres"
@@ -22,7 +22,7 @@ open class R2dbcConfiguration {
     private val POSTGRES_PASSWORD: String = System.getenv("POSTGRES_PASSWORD") ?: "secret"
 
     @Bean
-    open fun connectionFactory(): ConnectionFactory =
+    fun connectionFactory(): ConnectionFactory =
         ConnectionFactoryOptions.builder()
             .option(ConnectionFactoryOptions.DRIVER, "postgresql")
             .option(ConnectionFactoryOptions.HOST, POSTGRES_HOST)
@@ -34,12 +34,12 @@ open class R2dbcConfiguration {
             .let { options -> ConnectionFactories.get(options) }
 
     @Bean
-    open fun r2dbcEntityTemplate(connectionFactory: ConnectionFactory): R2dbcEntityTemplate {
+    fun r2dbcEntityTemplate(connectionFactory: ConnectionFactory): R2dbcEntityTemplate {
         return R2dbcEntityTemplate(connectionFactory)
     }
 
     @Bean
-    open fun transactionManager(connectionFactory: ConnectionFactory): ReactiveTransactionManager {
+    fun transactionManager(connectionFactory: ConnectionFactory): ReactiveTransactionManager {
         return R2dbcTransactionManager(connectionFactory)
     }
 }

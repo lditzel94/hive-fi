@@ -11,4 +11,4 @@ data class Entity(@Id val id: Long? = null, val firstName: String)
 interface R2dbcExampleRepository : CoroutineCrudRepository<Entity, Long> {}
 
 @Repository
-open class R2dbcRepositoryExampleAdapter()
+class R2dbcRepositoryExampleAdapter()

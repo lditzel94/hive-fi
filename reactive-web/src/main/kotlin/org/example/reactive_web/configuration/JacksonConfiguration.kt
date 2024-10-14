@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder
 
 @Configuration
-open class JacksonConfiguration {
+class JacksonConfiguration {
     @Bean
-    open fun objectMapper(): ObjectMapper {
+    fun objectMapper(): ObjectMapper {
         return Jackson2ObjectMapperBuilder()
             .propertyNamingStrategy(SNAKE_CASE)
             .build<ObjectMapper>()

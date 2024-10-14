@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan
 
 @SpringBootApplication
 @ComponentScan("org.example")
-open class App
+class App
 
 fun main(args: Array<String>) {
     runApplication<App>(*args)
